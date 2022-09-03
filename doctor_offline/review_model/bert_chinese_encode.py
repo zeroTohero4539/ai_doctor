@@ -5,7 +5,8 @@ from transformers import AutoModel, AutoTokenizer
 model_name = 'bert-base-chinese'
 # 定义字映射器
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-
+# 初始化预训练模型
+model = AutoModel.from_pretrained(model_name)
 
 def get_bert_encode_for_single(text):
     """
@@ -13,8 +14,6 @@ def get_bert_encode_for_single(text):
     :param text: 文本信息
     :return:
     """
-    # 初始化预训练模型
-    model = AutoModel.from_pretrained(model_name)
     # 将文本信息进行编码
     token_index = tokenizer.encode(text)[1: -1]
     # 将数字化的文本信息转成张量

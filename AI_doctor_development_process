@@ -1,1 +1,11 @@
-我想要测试一下这个文件
+命名实体审核模型：
+    1. 通过 bert 预训练模型得到数字化后的文本张量：bert_chinese_encode.py
+    2. 构建 RNN 网络，实现文本的二分类：RNN_MODEL.py
+    3. 进行模型训练：train.py
+        3.1 构建随机选取数据函数：randomTrainingExample(train_data_path)
+        3.2 构建模型训练函数：train(category_tensor, text_tensor)
+        3.3 构建模型验证函数：valid(category_tensor, text_tensor)
+        3.4 调用训练和验证函数：main()
+        3.5 绘制训练和验证的损失和准确率对照曲线：draw_loss_acc_curve(all_train_losses, all_train_acc, all_valid_losses, all_valid_acc)
+        3.6 保存模型：save_model(save_model_path)
+    4. 模型的使用：predict.py
