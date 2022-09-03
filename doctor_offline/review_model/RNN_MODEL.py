@@ -57,5 +57,3 @@ if __name__ == '__main__':
     output, hidden = rnn(inputs, hidden)
     print(output)
     print(output.shape)
-    print(hidden)
-    print(hidden.shape)
